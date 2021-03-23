@@ -43,16 +43,29 @@ tutorServices.service("User", function($http) {
     var resp = {
         startTime: 0,
         endTime: 0,
+        name: "",
         gender: "",
         age: "",
+        email:"",
         testType: "",
+        ethnicity: "",
+        sexualOrientation: "",
+        civilState: "",
+        city: "",
+        email: "",
+        whatsapp:"",
         pretestPoints: 0,
         activityPoints: 0,
         posttestPoints: 0,
+        flowPoints: 0,
         pre: [],
-        post: []
+        post: [],
+        flow: [],
     };
 
+    this.setName = function(value) {
+        resp.name = value;
+    }
     this.setGender = function(value) {
         resp.gender = value;
     };
@@ -61,6 +74,29 @@ tutorServices.service("User", function($http) {
         resp.age = value;
     };
 
+    this.setEmail = function(value) {
+        resp.email = value;
+    }
+
+    this.setEthnicity = function(value) {
+        resp.ethnicity = value;
+    }
+
+    this.setSexualOrientation = function(value) {
+        resp.sexualOrientation = value;
+    }
+    this.setCivilState = function(value) {
+        resp.civilState = value;
+    }
+    this.setCity = function(value) {
+        resp.city = value;
+    }
+    this.setEmail = function(value) {
+        resp.email = value;
+    }
+    this.setWhatsapp = function(value) {
+        resp.whatsapp = value;
+    }
     this.setTestType = function(value) {
         resp.testType = value;
     };
@@ -72,6 +108,9 @@ tutorServices.service("User", function($http) {
     this.setPosttestPoints = function(value) {
         resp.posttestPoints = value;
     };
+    this.setFlowPoints = function(value) {
+        resp.flowPoints = value;
+    };
 
     this.setActivityPoints = function(value) {
         resp.activityPoints = value;
@@ -81,7 +120,7 @@ tutorServices.service("User", function($http) {
         return resp;
     };
 
-    this.getAnxiety = function() {
+    this.getMotivation = function() {
         return resp.pretestPoints;
     };
 
@@ -91,6 +130,14 @@ tutorServices.service("User", function($http) {
 
     this.setPost = function(value) {
         resp.post = value;
+    };
+
+    this.setFlow = function(value) {
+        resp.flow = value;
+    };
+
+    this.setQuestions = function(value) {
+        resp.questions = value;
     };
 
     this.setStartTime = function(value) {
