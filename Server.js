@@ -3,6 +3,7 @@ var bodyParser = require('body-parser');
 var app = express();
 var fs = require('fs')
 var uuid = require('uuid');
+const helmet = require('helmet');
 
 
 app.use(express.static("webapp"));
@@ -11,6 +12,7 @@ app.get('/', function (req, res) {
     res.redirect('/');
 });
 
+app.use(helmet.frameguard({ action: 'SAMEORIGIN' }));
 // Parses the body for POST, PUT, DELETE, etc.
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

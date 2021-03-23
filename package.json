@@ -4,6 +4,7 @@
   "description": "This project comprises an experimental environment to study the impact of gender stereotype threat in student anxiety",
   "dependencies": {
     "express": "*",
+    "helmet": "^4.4.1",
     "uuid": "*"
   },
   "engine": "node >=0.6.x",
