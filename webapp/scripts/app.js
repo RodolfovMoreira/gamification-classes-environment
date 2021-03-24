@@ -5,6 +5,10 @@ angular.module("tutor", ["ngRoute", "ngResource", "ngAnimate", "ngMaterial", "ng
         templateUrl: "views/pretest.html",
         controller: "PretestCtrl"
     }).
+    when("/dfsshort", {
+        templateUrl: "views/dfsshort.html",
+        controller: "DfsshortCtrl"
+    }).
     when("/home", {
         templateUrl: "views/home.html",
         controller: "HomeCtrl"

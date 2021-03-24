@@ -1,10 +1,20 @@
-angular.module('tutor').controller("PretestCtrl", function($scope, $window, $location, configService, User) {
+angular.module("tutor").controller("DfsshortCtrl", function($scope, $window, $location, configService, User) {
 
     var themes = ["default", "stFemale", "stMale"];
 
     var random = Math.floor((Math.random() * 10000)) % 3;
 
-    $scope.questions = ["Sinto-me Calmo", "Sinto-me Seguro", "Estou tenso", "Estou arrependido", "Sinto-me à vontade", "Sinto-me perturbado", "Estou preocupado com possíveis infortúnios", "Sinto-me descansado", "Sinto-me ansioso", "Sinto-me 'em casa'", "Sinto-me confiante", "Sinto-me nervoso", "Sinto-me agitado", "Sinto-me em uma pilha de nervos", "Estou descontraído", "Sinto-me satisfeito", "Estou preocupado", "Sinto-me confuso", "Sinto-me alegre", "Sinto-me bem"];
+    $scope.questions = [
+        "Minhas habilidades combinam com o desafio que estou experimentando",
+        "Realizo a atividade automaticamente sem pensar muito", 
+        "Sei o que quero alcançar", 
+        "É muito claro para mim como estou me saindo na atividade",
+        "Estou completamente focado na tarefa em questão",
+        "Tenho um sentimento de total controle sobre o que estou fazendo",
+        "Não estou preocupado com o que os outros podem estar pensando de mim",
+        "A forma como o tempo passa parece ser diferente da normal",
+        "A experiência é extremamente recompensadora",
+        ];
     $scope.answers = [];
 
     $scope.setTime = function() {
@@ -16,7 +26,7 @@ angular.module('tutor').controller("PretestCtrl", function($scope, $window, $loc
 
         //console.log($scope.answers);
         //  validation
-        if ($scope.answers.length < 20) {
+        if ($scope.answers.length < 9) {
             $scope.msg = "Por favor, responda todas as perguntas!"
         } else {
             function add(a, b) {
@@ -31,28 +41,24 @@ angular.module('tutor').controller("PretestCtrl", function($scope, $window, $loc
             ans[1] = 5 - ans[1];
             ans[4] = 5 - ans[4];
             ans[7] = 5 - ans[7];
-            ans[9] = 5 - ans[9];
+            /* ans[9] = 5 - ans[9];
             ans[10] = 5 - ans[10];
             ans[14] = 5 - ans[14];
             ans[15] = 5 - ans[15];
             ans[18] = 5 - ans[18];
-            ans[19] = 5 - ans[19];
+            ans[19] = 5 - ans[19]; */
 
             var sum = ans.reduce(add, 0);
 
             console.log(ans);
-            console.log("PRETEST: " + sum);
+            console.log("DFS: " + sum);
 
-            configService.setTheme(themes[random]);
-            User.setGender($scope.gender);
-            User.setAge($scope.age);
-            User.setTestType(themes[random]);
-            User.setPretestPoints(sum);
-            User.setPre(ans);
+            
+            User.setDfsQuestions(ans);
 
             console.log(User.getResponse());
             // User.save();
-            $location.path("/dfsshort");
+            $location.path("/home");
 
         };
 

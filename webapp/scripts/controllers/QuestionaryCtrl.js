@@ -1,4 +1,4 @@
-angular.module('tutor').controller("QuestionaryCtrl", function ($scope, $location, User) {
+angular.module("tutor").controller("QuestionaryCtrl", function ($scope, $location, User) {
     $scope.questions = [
         "Quantidade de automóveis de passeio exclusivamente para uso particular:",
         "Quantidade de empregados mensalistas, considerando apenas os que trabalham pelo menos cinco dias por semana: ",
@@ -14,6 +14,11 @@ angular.module('tutor').controller("QuestionaryCtrl", function ($scope, $locatio
         "Quantidade de máquinas secadoras de roupas, considerando lava e seca:",
       ];
       $scope.answers = [];
+
+      $scope.setTime = function() {
+        var time = new Date().getTime();
+        User.setEndTime(time);
+    };
   
       $scope.processAnswers = function () {
         var ans = $scope.answers;

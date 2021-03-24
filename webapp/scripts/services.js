@@ -61,6 +61,7 @@ tutorServices.service("User", function($http) {
         pre: [],
         post: [],
         flow: [],
+        dfsquestions: [],
     };
 
     this.setName = function(value) {
@@ -138,6 +139,10 @@ tutorServices.service("User", function($http) {
 
     this.setQuestions = function(value) {
         resp.questions = value;
+    };
+
+    this.setDfsQuestions = function(value) {
+        resp.dfsquestions = value;
     };
 
     this.setStartTime = function(value) {
