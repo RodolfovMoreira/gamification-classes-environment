@@ -9,8 +9,11 @@
     <div layout="row" layout-align="center center" class="bg">
         <md-card layout="column" layout-align="center center" flex="auto" width="50%">
             <md-card-content layout="column" layout-align="left canter" flex="auto">
-                <p>Responda as questões abaixo marcando as alternativas que mais se aproximam do estado em que você se
-                    encontra.</p>
+                <p>Por favor, responda às seguintes questões com relação à sua experiência em atividades de "resolução de problemas lógicos". 
+								Estas questões estão relacionadas com os pensamentos e sensações que você pode experienciar durante 
+								a participação numa atividade desse tipo. Você pode experienciar estas características em alguns momentos, 
+								a todo momento ou em nenhum momento. Não há respostas corretas ou erradas. Pense sobre quão frequentemente 
+								você experiencia cada característica durante sua atividade e então marque o número que melhor representa sua experiência.</p>
             </md-card-content>
             <md-card-content>
                 <form>
@@ -18,20 +21,20 @@
                     <div ng-repeat="q in questions">
                         <h3>{{q}}</h3>
                         <div layout="row">
-                            <p>Nunca </p>
+                            <!--<p>Nunca </p>-->
                             <md-radio-group ng-model="answers[$index]" layout="row" class="md-primary">
-                                <label>1</label>
-                                <md-radio-button value="1" aria-label="option 1"></md-radio-button>
-                                <label>2</label>
-                                <md-radio-button value="2" aria-label="option 2"></md-radio-button>
-                                <label>3</label>
-                                <md-radio-button value="3" aria-label="option 3"></md-radio-button>
-                                <label>4</label>
-                                <md-radio-button value="4" aria-label="option 4"></md-radio-button>
-                                <label>5</label>
-                                <md-radio-button value="5" aria-label="option 5"></md-radio-button>
-                            </md-radio-group>
-                            <p>Sempre</p>
+															<label>Nunca</label>
+															<md-radio-button value="1" aria-label="option 1"></md-radio-button>
+															<label>Raramente</label>
+															<md-radio-button value="2" aria-label="option 2"></md-radio-button>
+															<label>Às vezes</label>
+															<md-radio-button value="3" aria-label="option 3"></md-radio-button>
+															<label>Frequentemente</label>
+															<md-radio-button value="4" aria-label="option 4"></md-radio-button>
+															<label>Sempre</label>
+															<md-radio-button value="5" aria-label="option 5"></md-radio-button>
+													</md-radio-group>
+													<!--<p>Sempre</p>-->
                         </div>
                         </p>
                         </p>

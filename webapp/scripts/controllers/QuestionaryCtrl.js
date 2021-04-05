@@ -15,9 +15,9 @@ angular.module("tutor").controller("QuestionaryCtrl", function ($scope, $locatio
       ];
       $scope.answers = [];
 
-      $scope.setTime = function() {
-        var time = new Date().getTime();
-        User.setEndTime(time);
+    $scope.setTime = function() {
+      var time = new Date().getTime();
+      User.setEndTime(time);
     };
   
       $scope.processAnswers = function () {
@@ -25,7 +25,7 @@ angular.module("tutor").controller("QuestionaryCtrl", function ($scope, $locatio
         console.log(ans);
   
         // invert positive answers
-        ans[0] = 5 - ans[0];
+        /* ans[0] = 5 - ans[0];
         ans[1] = 5 - ans[1];
         ans[4] = 5 - ans[4];
         ans[7] = 5 - ans[7];
@@ -34,14 +34,15 @@ angular.module("tutor").controller("QuestionaryCtrl", function ($scope, $locatio
         ans[14] = 5 - ans[14];
         ans[15] = 5 - ans[15];
         ans[18] = 5 - ans[18];
-        ans[19] = 5 - ans[19];
+        ans[19] = 5 - ans[19]; */
   
         var sum = ans.reduce(add, 0);
   
         function add(a, b) {
           return parseInt(a) + parseInt(b);
         }
-  
+				var time = new Date().getTime();
+				User.setEndTime(time);
         User.setAge($scope.age);
         User.setGender($scope.gender);
         User.setEmail($scope.email);

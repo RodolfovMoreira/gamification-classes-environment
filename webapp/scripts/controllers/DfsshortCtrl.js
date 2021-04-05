@@ -37,10 +37,10 @@ angular.module("tutor").controller("DfsshortCtrl", function($scope, $window, $lo
             console.log(ans);
 
             //invert positive answers
-            ans[0] = 5 - ans[0];
+            /* ans[0] = 5 - ans[0];
             ans[1] = 5 - ans[1];
             ans[4] = 5 - ans[4];
-            ans[7] = 5 - ans[7];
+            ans[7] = 5 - ans[7]; */
             /* ans[9] = 5 - ans[9];
             ans[10] = 5 - ans[10];
             ans[14] = 5 - ans[14];

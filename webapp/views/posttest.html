@@ -2,40 +2,41 @@
     <div layout="row" layout-align="center center" >
         <md-card layout="column" layout-align="center center" flex="auto" width="50%">
             <md-toolbar layout="row" layout-align="center center" layout-padding class="md-primary md-hue-2">
-                <label>Etapa IV - Pós Teste</label>
+                <label>Etapa IV - Pós Teste - (STAI-S)</label>
             </md-toolbar>
         </md-card>
     </div>
     <div layout="row" layout-align="center center" class="bg">
         <md-card layout="column" layout-align="center center" flex="auto" width="50%">
             <md-card-title>
-                <p> Para finalizar, responda as questões abaixo marcando as alternativas que melhor se adequem ao seu estado psicológico atual.</p>
+                <p> Leia cada afirmativa abaixo e indique como você̂ se sente AGORA, neste momento. 
+									Não gaste muito tempo numa única afirmação, mas tente dar uma resposta que mais se aproxima de como você̂ se sente NESTE MOMENTO depois da atividade.</p>
             </md-card-title>
             <md-card-content>
                 <form>
                     <div ng-repeat="q in questions">
                         <h3>{{q}}</h3>
                         <div layout="row">
-                            <p>Nunca </p>
+                            <!--<p>Nunca </p>-->
                             <md-radio-group ng-model="answers[$index]" layout="row" class="md-primary">
-                                <label>1</label>
-                                <md-radio-button value="1" aria-label="option 1"></md-radio-button>
-                                <label>2</label>
-                                <md-radio-button value="2" aria-label="option 2"></md-radio-button>
-                                <label>3</label>
-                                <md-radio-button value="3" aria-label="option 3"></md-radio-button>
-                                <label>4</label>
-                                <md-radio-button value="4" aria-label="option 4"></md-radio-button>
-                                <label>5</label>
-                                <md-radio-button value="5" aria-label="option 5"></md-radio-button>
-                            </md-radio-group>
-                            <p>Sempre</p>
+															<label>Absolutamente Não</label>
+															<md-radio-button value="1" aria-label="option 1"></md-radio-button>
+															<label>Às vezes</label>
+															<md-radio-button value="2" aria-label="option 2"></md-radio-button>
+															<label>Frequentemente</label>
+															<md-radio-button value="3" aria-label="option 3"></md-radio-button>
+															<label>Quase Sempre</label>
+															<md-radio-button value="4" aria-label="option 4"></md-radio-button>
+															<!--<label>Quase Sempre</label>
+															<md-radio-button value="5" aria-label="option 5"></md-radio-button>-->
+													</md-radio-group>
+													<!--<p>Sempre</p>-->
                         </div>
                         </p>
                         </p>
                         <md-divider></md-divider>
                     </div>
-                    <md-button ng-click="processAnswers()" type="submit" class="md-raised md-primary">Finalizar!</md-button>
+                    <md-button ng-click="processAnswers()" type="submit" class="md-raised md-primary">Continuar!</md-button>
                     <span>{{msg}}</span>
                 </form>
             </md-card-content>

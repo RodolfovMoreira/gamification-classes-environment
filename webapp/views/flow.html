@@ -2,7 +2,7 @@
     <div layout="row" layout-align="center center" >
         <md-card layout="column" layout-align="center center" flex="auto" width="50%">
             <md-toolbar layout="row" layout-align="center center" layout-padding class="md-primary md-hue-2">
-                <label>Etapa V - Questionário de Fluxo</label>
+                <label>Etapa V - Questionário de Fluxo - (FSS-Short BR)</label>
             </md-toolbar>
         </md-card>
     </div>
@@ -10,7 +10,8 @@
         <md-card layout="column" layout-align="center center" flex="auto" width="50%">
             <md-card-content layout="column" layout-align="left canter" flex="auto">
                 <p>Por favor, responda às seguintes questões com relação à sua experiência na atividade. Estas questões estão relacionadas com os pensamentos e sensações que você pode experienciar durante a participação numa atividade. 
-                    Você pode experienciar estas características em alguns momentos, a todo momento ou em nenhum momento. Não há respostas corretas ou erradas. Pense sobre quão frequentemente você experiencia cada característica durante sua atividade e então marque o número que melhor representa sua experiência.
+                    Você pode experienciar estas características em alguns momentos, a todo momento ou em nenhum momento. Não há respostas corretas ou erradas. 
+										Pense sobre quão frequentemente você experiencia cada característica durante sua atividade e então marque o número que melhor representa sua experiência.
                 </p>
             </md-card-content>
             <md-card-content>
@@ -19,26 +20,26 @@
                     <div ng-repeat="q in questions">
                         <h3>{{q}}</h3>
                         <div layout="row">
-                            <p>Nunca </p>
+                            <!--<p>Nunca </p>-->
                             <md-radio-group ng-model="answers[$index]" layout="row" class="md-primary">
-                                <label>1</label>
+                                <label>Discordo Fortemente</label>
                                 <md-radio-button value="1" aria-label="option 1"></md-radio-button>
-                                <label>2</label>
+                                <label>Discordo</label>
                                 <md-radio-button value="2" aria-label="option 2"></md-radio-button>
-                                <label>3</label>
+                                <label>Nem concordo nem discordo</label>
                                 <md-radio-button value="3" aria-label="option 3"></md-radio-button>
-                                <label>4</label>
+                                <label>Concordo</label>
                                 <md-radio-button value="4" aria-label="option 4"></md-radio-button>
-                                <label>5</label>
+                                <label>Concordo Fortemente</label>
                                 <md-radio-button value="5" aria-label="option 5"></md-radio-button>
                             </md-radio-group>
-                            <p>Sempre</p>
+                            <!--<p>Sempre</p>-->
                         </div>
                         </p>
                         </p>
                         <md-divider></md-divider>
                     </div>
-                    <md-button ng-click="processAnswers()" type="submit" class="md-raised md-primary">Concluir!</md-button>
+                    <md-button ng-click="processAnswers()" type="submit" class="md-raised md-primary">Continuar</md-button>
                     <span>{{msg}}</span>
 
 

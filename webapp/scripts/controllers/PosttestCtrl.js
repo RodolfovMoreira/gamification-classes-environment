@@ -1,11 +1,11 @@
 angular.module('tutor').controller("PosttestCtrl", function($scope, $location, User) {
 
-    $scope.questions = ["Sinto-me Calmo", "Sinto-me Seguro", "Estou tenso", "Estou arrependido", "Sinto-me à vontade", "Sinto-me perturbado", "Estou preocupado com possíveis infortúnios", "Sinto-me descansado", "Sinto-me ansioso", "Sinto-me 'em casa'", "Sinto-me confiante", "Sinto-me nervoso", "Sinto-me agitado", "Sinto-me em uma pilha de nervos", "Estou descontraído", "Sinto-me satisfeito", "Estou preocupado", "Sinto-me confuso", "Sinto-me alegre", "Sinto-me bem"];
+    $scope.questions = ["Sinto-me Calmo", "Estou tenso", "Sinto-me à vontade", "Sinto-me nervoso", "Estou descontraído", "Estou preocupado"];
     $scope.answers = [];
 
     $scope.processAnswers = function() {
 
-        if ($scope.answers.length < 20) {
+        if ($scope.answers.length < 6) {
             $scope.msg = "Por favor, responda todas as perguntas!"
         } else {
 
@@ -13,7 +13,7 @@ angular.module('tutor').controller("PosttestCtrl", function($scope, $location, U
             console.log(ans);
 
             //invert positive answers
-            ans[0] = 5 - ans[0];
+            /* ans[0] = 5 - ans[0];
             ans[1] = 5 - ans[1];
             ans[4] = 5 - ans[4];
             ans[7] = 5 - ans[7];
@@ -22,7 +22,7 @@ angular.module('tutor').controller("PosttestCtrl", function($scope, $location, U
             ans[14] = 5 - ans[14];
             ans[15] = 5 - ans[15];
             ans[18] = 5 - ans[18];
-            ans[19] = 5 - ans[19];
+            ans[19] = 5 - ans[19]; */
 
             var sum = ans.reduce(add, 0);
 

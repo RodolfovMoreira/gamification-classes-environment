@@ -119,7 +119,7 @@
     <div layout="row" layout-align="center center" ng-show="start" class="bg">
         <md-card layout="column" layout-align="center center" flex="auto" width="50%">
             <md-card-title layout="column">
-                <h2>Etapa I - Questionário Inicial</h2>
+                <h2>Etapa I - Questionário Inicial - (STAI-T)</h2>
                 <p>Responda as questões abaixo marcando as alternativas que mais se aproximam do estado em que você se
                     encontra.</p>
             </md-card-title>
@@ -142,20 +142,20 @@
                     <div ng-repeat="q in questions">
                         <h3>{{q}}</h3>
                         <div layout="row">
-                            <p>Nunca </p>
+                            <!--<p>Nunca </p>-->
                             <md-radio-group ng-model="answers[$index]" layout="row" class="md-primary">
-                                <label>1</label>
+                                <label>Quase Nunca</label>
                                 <md-radio-button value="1" aria-label="option 1"></md-radio-button>
-                                <label>2</label>
+                                <label>Ás vezes</label>
                                 <md-radio-button value="2" aria-label="option 2"></md-radio-button>
-                                <label>3</label>
+                                <label>Frequentemente</label>
                                 <md-radio-button value="3" aria-label="option 3"></md-radio-button>
-                                <label>4</label>
+                                <label>Quase Sempre</label>
                                 <md-radio-button value="4" aria-label="option 4"></md-radio-button>
-                                <label>5</label>
-                                <md-radio-button value="5" aria-label="option 5"></md-radio-button>
+                                <!--<label>5</label>
+                                <md-radio-button value="5" aria-label="option 5"></md-radio-button>-->
                             </md-radio-group>
-                            <p>Sempre</p>
+                            <!--<p>Sempre</p>-->
                         </div>
                         </p>
                         </p>

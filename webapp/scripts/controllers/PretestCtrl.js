@@ -4,7 +4,7 @@ angular.module('tutor').controller("PretestCtrl", function($scope, $window, $loc
 
     var random = Math.floor((Math.random() * 10000)) % 3;
 
-    $scope.questions = ["Sinto-me Calmo", "Sinto-me Seguro", "Estou tenso", "Estou arrependido", "Sinto-me à vontade", "Sinto-me perturbado", "Estou preocupado com possíveis infortúnios", "Sinto-me descansado", "Sinto-me ansioso", "Sinto-me 'em casa'", "Sinto-me confiante", "Sinto-me nervoso", "Sinto-me agitado", "Sinto-me em uma pilha de nervos", "Estou descontraído", "Sinto-me satisfeito", "Estou preocupado", "Sinto-me confuso", "Sinto-me alegre", "Sinto-me bem"];
+    $scope.questions = ["Sou calmo(a), ponderado(a) e senhor(a) de mim mesmo(a)", "Preocupo-me demais com coisas sem importância", "Sinto-me seguro(a)", "Fico tenso(a) e perturbado(a) quando penso em meus problemas do momento", "Sinto-me nervoso(a) e inquieto(a)", "Tomo decisões facilmente"];
     $scope.answers = [];
 
     $scope.setTime = function() {
@@ -16,7 +16,7 @@ angular.module('tutor').controller("PretestCtrl", function($scope, $window, $loc
 
         //console.log($scope.answers);
         //  validation
-        if ($scope.answers.length < 20) {
+        if ($scope.answers.length < 6) {
             $scope.msg = "Por favor, responda todas as perguntas!"
         } else {
             function add(a, b) {
@@ -27,7 +27,7 @@ angular.module('tutor').controller("PretestCtrl", function($scope, $window, $loc
             console.log(ans);
 
             //invert positive answers
-            ans[0] = 5 - ans[0];
+            /* ans[0] = 5 - ans[0];
             ans[1] = 5 - ans[1];
             ans[4] = 5 - ans[4];
             ans[7] = 5 - ans[7];
@@ -36,7 +36,7 @@ angular.module('tutor').controller("PretestCtrl", function($scope, $window, $loc
             ans[14] = 5 - ans[14];
             ans[15] = 5 - ans[15];
             ans[18] = 5 - ans[18];
-            ans[19] = 5 - ans[19];
+            ans[19] = 5 - ans[19]; */
 
             var sum = ans.reduce(add, 0);
 
