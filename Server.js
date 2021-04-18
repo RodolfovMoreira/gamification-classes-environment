@@ -4,13 +4,22 @@ var app = express();
 var fs = require('fs')
 var uuid = require('uuid');
 const helmet = require('helmet');
+const path = require('path');
 
+const PORT = 8080;
+const HOST = '0.0.0.0';
 
 app.use(express.static("webapp"));
 
-app.get('/', function (req, res) {
-    res.redirect('/');
+app.get('/hello', (req, res) => {
+  res.send('Hello World');
 });
+
+app.get('/', function (req, res) {
+    /* res.redirect('/'); */
+		res.sendFile(path.join(`${__dirname}/webapp/index.html`));
+});
+
 
 app.use(helmet.frameguard({ action: 'SAMEORIGIN' }));
 // Parses the body for POST, PUT, DELETE, etc.
@@ -48,5 +57,5 @@ app.post('/save-response', function(req, res, next){
 
 });
 
-app.listen(8080, 'localhost');
-console.log("This project is listening on port 8080");
+app.listen(PORT, HOST);
+console.log(`This project is listening on http://${HOST}:${PORT}`);
